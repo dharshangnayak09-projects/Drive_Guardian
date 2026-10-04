@@ -1,0 +1,66 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "DriveGuardian",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "shell": {
+        "execute": true,
+        "sidecar": true,
+        "scope": [
+          {
+            "name": "python",
+            "cmd": "python",
+            "args": true
+          },
+          {
+            "name": "binaries/driveguardian-cli",
+            "sidecar": true,
+            "args": true
+          }
+        ]
+      },
+      "dialog": {
+        "open": true
+      },
+      "notification": {
+        "all": true
+      }
+    },
+    "systemTray": {
+      "iconPath": "icons/32x32.png",
+      "iconAsTemplate": false
+    },
+    "bundle": {
+      "active": true,
+      "targets": ["msi", "nsis"],
+      "identifier": "com.driveguardian.app",
+      "externalBin": ["binaries/driveguardian-cli"],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ]
+    },
+    "security": {
+      "csp": null
+    },
+    "windows": [
+      {
+        "title": "DriveGuardian",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 600
+      }
+    ]
+  }
+}

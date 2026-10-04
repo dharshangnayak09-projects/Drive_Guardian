@@ -1,0 +1,5 @@
+# Phase 1 needs only the standard library (sqlite3, os, hashlib).
+# Listed here for Phase 2+ (usage tracking, AFUS/FAP models, duplicate engine).
+numpy>=1.26
+pandas>=2.1
+scikit-learn>=1.4
